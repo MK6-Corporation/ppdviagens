@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PPD Viagens · Grupo VIP com saída de São Paulo</title>
+  <meta name="author" content="PPD Viagens" />
+  <meta name="description" content="Entre no grupo VIP da PPD Viagens e receba promoções exclusivas e pacotes relâmpago com saída de São Paulo." />
+  <meta property="og:title" content="PPD Viagens · Grupo VIP com saída de São Paulo" />
+  <meta property="og:description" content="Promoções exclusivas, pacotes relâmpago e atendimento VIP para viagens com saída de São Paulo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo-ppd.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PPD Viagens · Grupo VIP com saída de São Paulo" />
+  <meta name="twitter:description" content="Promoções exclusivas, pacotes relâmpago e atendimento VIP para viagens com saída de São Paulo." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="assets/logo-ppd.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <style>
+    :root {
+      --background: oklch(19% .045 250);
+      --foreground: oklch(97% .01 250);
+      --card: oklch(24% .045 250);
+      --primary: oklch(76% .16 62);
+      --primary-foreground: oklch(22% .05 250);
+      --muted-foreground: oklch(76% .02 250);
+      --accent: oklch(68% .12 235);
+      --border: oklch(98% .01 250 / .12);
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --gradient-page: radial-gradient(120% 80% at 50% -10%, oklch(34% .07 245) 0%, transparent 60%),
+                       linear-gradient(180deg, oklch(18% .045 252) 0%, oklch(14% .04 255) 100%);
+      --gradient-cta: linear-gradient(135deg, oklch(82% .15 72) 0%, oklch(72% .17 55) 100%);
+      --shadow-cta: 0 12px 40px -8px oklch(76% .16 62 / .45);
+      --shadow-glow: 0 0 90px oklch(76% .16 62 / .18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid var(--border); }
+    html { -webkit-text-size-adjust: 100%; line-height: 1.5; background-color: oklch(14% .04 255); }
+    body {
+      min-height: 100vh;
+      background: var(--gradient-page);
+      background-attachment: fixed;
+      color: var(--foreground);
+      font-family: var(--font-body);
+    }
+    img, svg { display: block; }
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: inherit; }
+    ul { list-style: none; }
+    h1, h2 { font-size: inherit; font-weight: inherit; }
+
+    /* ===== Layout ===== */
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 3rem 1.25rem;
+    }
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 48rem;
+      text-align: center;
+    }
+
+    /* ===== Eyebrow ===== */
+    .eyebrow { display: flex; align-items: center; gap: .75rem; }
+    .eyebrow__line { height: 1px; width: 2.5rem; background: oklch(76% .16 62 / .5); }
+    .eyebrow__text {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .35em;
+      color: var(--primary);
+    }
+
+    .divider {
+      margin-top: 2rem;
+      height: 1px;
+      width: 14rem;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+
+    /* ===== Logo ===== */
+    .logo {
+      margin-top: 1.5rem;
+      width: 14rem;
+      filter: drop-shadow(var(--shadow-glow));
+    }
+
+    /* ===== Hero ===== */
+    .title {
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 1.25;
+    }
+    .text-gradient-gold {
+      font-style: normal;
+      background: var(--gradient-cta);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .lead {
+      margin-top: 1.5rem;
+      max-width: 36rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: var(--muted-foreground);
+    }
+    .lead strong { color: var(--foreground); font-weight: 700; }
+
+    .pill {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border-radius: 9999px;
+      border: 1px solid oklch(68% .12 235 / .4);
+      background: oklch(68% .12 235 / .1);
+      padding: .625rem 1.25rem;
+      font-size: .875rem;
+      line-height: 1.25rem;
+      color: var(--accent);
+    }
+    .pill svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+
+    /* ===== CTA ===== */
+    .btn-vip {
+      margin-top: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      border-radius: 9999px;
+      padding: 1rem 2.25rem;
+      font-size: .875rem;
+      line-height: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      background: var(--gradient-cta);
+      color: var(--primary-foreground);
+      box-shadow: var(--shadow-cta);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .btn-vip svg { width: 1.25rem; height: 1.25rem; }
+    .btn-vip:hover { transform: translateY(-.125rem); }
+
+    .note {
+      margin-top: 1rem;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: oklch(76% .16 62 / .8);
+    }
+
+    /* ===== Benefícios ===== */
+    .benefits {
+      margin-top: 3.5rem;
+      width: 100%;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      background: oklch(24% .045 250 / .6);
+      padding: 2.5rem 1.5rem;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+    .benefits ul { display: grid; gap: 2.5rem; }
+    .benefits li { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+    .benefits__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      border: 1px solid oklch(76% .16 62 / .4);
+      background: oklch(76% .16 62 / .1);
+      color: var(--primary);
+    }
+    .benefits__icon svg { width: 1.25rem; height: 1.25rem; }
+    .benefits h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: var(--foreground);
+    }
+    .benefits p { font-size: .875rem; line-height: 1.25rem; color: var(--muted-foreground); }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: .75rem;
+      line-height: 1rem;
+      color: var(--muted-foreground);
+    }
+
+    /* ===== sm (≥ 640px) ===== */
+    @media (min-width: 40rem) {
+      .page { padding-top: 4rem; padding-bottom: 4rem; }
+      .logo { width: 16rem; }
+      .title { font-size: 3.75rem; line-height: 1.25; }
+      .lead { font-size: 1.125rem; line-height: 1.75rem; }
+      .benefits ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="wrap">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <p class="eyebrow__text">PPD Viagens · Membership</p>
+        <span class="eyebrow__line"></span>
+      </div>
+
+      <div class="divider"></div>
+
+      <img src="assets/logo-ppd.png" alt="Logo PPD Viagens" class="logo" width="495" height="621" />
+
+      <h1 class="title">
+        As viagens dos seus sonhos,
+        <em class="text-gradient-gold">antes de todo mundo.</em>
+      </h1>
+
+      <p class="lead">
+        Entre no grupo VIP da <strong>PPD Viagens</strong> e receba em primeira mão promoções exclusivas,
+        pacotes relâmpago e descontos que não chegam ao público.
+      </p>
+
+      <div class="pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        Grupo exclusivo para viagens com saída de São Paulo
+      </div>
+
+      <a href="https://chat.whatsapp.com/Dr7DVuuXzx7JaLnCq12YZE?s=cl&amp;p=i&amp;mlu=0&amp;ilr=4" target="_blank" rel="noopener noreferrer" class="btn-vip">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+        Entrar no grupo VIP
+      </a>
+
+      <p class="note">Acesso gratuito · Vagas limitadas</p>
+
+      <section class="benefits">
+        <ul>
+          <li>
+            <span class="benefits__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+            </span>
+            <h2>Ofertas exclusivas</h2>
+            <p>Descontos liberados antes do site</p>
+          </li>
+          <li>
+            <span class="benefits__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            </span>
+            <h2>Pacotes relâmpago</h2>
+            <p>Oportunidades por tempo limitado</p>
+          </li>
+          <li>
+            <span class="benefits__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg>
+            </span>
+            <h2>Atendimento VIP</h2>
+            <p>Consultoria direta com especialistas</p>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="footer">© <span id="ano">2026</span> PPD Viagens · Saídas de São Paulo</footer>
+    </div>
+  </main>
+  <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>
